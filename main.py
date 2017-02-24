@@ -6,17 +6,6 @@ from google.appengine.ext import db
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir))
-
-# form_html = """
-#         # <form >
-#         #    <body style='background-color:rgb(0,234,200)' >
-#         #    <h2 style='color:rgb(234,13,156)'> Add a food </h2>
-#         #    <input type = "text"  name="food" ><br><br>
-#         #    %s
-#         #    <button> Add food </button>
-#         #    </body>
-#         # </form>
-# """
 hidden_html = """
 <input type ="hidden" name="food" value="%s"
 """
@@ -41,7 +30,7 @@ class Handler (webapp2.RequestHandler):
 
 class MainPage(Handler):
     def get(self):
-        self.render("shopping_list.html")
+        self.render("shopping_list.html",name="Hannah")
 
         ##Using function named render instead of the code below
         # a="<h4 style='color:white;background-color:rgb(234,13,156);text-align:center''>Hello, Udacity !!!!<h4>"
