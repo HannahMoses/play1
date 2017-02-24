@@ -30,7 +30,7 @@ class Handler (webapp2.RequestHandler):
 
 class MainPage(Handler):
     def get(self):
-        self.render("shopping_list.html",name="Hannah")
+        self.render("shopping_list.html",name=self,request.get("name"))
 
         ##Using function named render instead of the code below
         # a="<h4 style='color:white;background-color:rgb(234,13,156);text-align:center''>Hello, Udacity !!!!<h4>"
